@@ -64,6 +64,7 @@ function page() {
         console.log(response);
         toast.success(response.data.message)
         router.replace(`/verify/${username}`)
+        toast.message(`Verification code sent successfully to ${response.data.email}`)
       } catch (error) {
         console.error("Error in signup of user",error);
         const axiosError = error as AxiosError<ApiResponse>
